@@ -3,15 +3,10 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 // Three.js
 export function Slide2(swiper){
 
-let slide1 = document.createElement('div');
-slide1.className = 'swiper-slide';
 
 var root;
+let canvas2 = document.getElementById('canvas2');
 
-
-let rendererElement = document.createElement('div');
-rendererElement.id = 'renderer';
-slide1.appendChild(rendererElement);
 
 // Membuat scene, camera, dan pencahayaan
 const scene = new THREE.Scene();
@@ -51,12 +46,10 @@ helmetLoader.load('./3d_model/mandalorian_helmet/scene.gltf', function (glb) {
 });
 
 // Membuat renderer
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas2 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 renderer.setClearColor(0x000000, 0);
-rendererElement.appendChild(renderer.domElement);
-
 
 
 // Fungsi animate untuk melakukan render dan animasi
@@ -71,7 +64,6 @@ const animate = () => {
 };
 
 animate();
-swiper.appendSlide(slide1);
 
 }
 

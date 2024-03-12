@@ -26,6 +26,14 @@ img {
   max-width: 100%;
 }
 
+canvas{
+  /* max-width: 100%; */
+  height: max-content;
+  width: max-content;
+    /* border: 1px solid blue; */
+
+}
+
 a {
   text-decoration: none;
 }
@@ -674,7 +682,7 @@ ul.product-labels__list li::before{
   position: absolute;
   z-index: 2;
   width: 500px;
-  left: 25%;
+  left: 65%;
   transform: translateX(-45%);
   max-height: 500px;
   height: 100%;
@@ -726,7 +734,9 @@ ul.product-labels__list li::before{
   transform: translateY(-50%) translateX(0);
   transition-delay: 0.3s;
 }
-.product-img__item img {
+/* .product-img__item img { */
+  .product-img__item canvas {
+
   object-fit: contain;
   object-position: center right;
 }

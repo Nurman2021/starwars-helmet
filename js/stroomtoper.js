@@ -1,17 +1,13 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+
+
 // Three.js
 export function Slide1(swiper){
 
-let slide1 = document.createElement('div');
-slide1.className = 'swiper-slide';
 
 var root;
-
-
-let rendererElement = document.createElement('div');
-rendererElement.id = 'renderer';
-slide1.appendChild(rendererElement);
+let canvas1 = document.getElementById('canvas1');
 
 // Membuat scene, camera, dan pencahayaan
 const scene = new THREE.Scene();
@@ -21,7 +17,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   500
 );
-camera.position.z = 2;
+camera.position.z = 3;
 
 
 const light1 = new THREE.DirectionalLight(0xffffff, 2);
@@ -40,10 +36,10 @@ scene.add(pointlight);
 const helmetLoader = new GLTFLoader();
 helmetLoader.load('./3d_model/empire_stormtrooper_helmet/scene.gltf', function (glb) {
 
-  console.log('mandalorian', glb);
+  console.log('stroomtoper', glb);
   root = glb.scene;
-  root.position.set(0, -0.5, 0);
-  root.scale.set(2, 2, 2);
+  root.position.set(0, -0.75, 0);
+  root.scale.set(3, 3, 3);
 
 
 
@@ -51,12 +47,10 @@ helmetLoader.load('./3d_model/empire_stormtrooper_helmet/scene.gltf', function (
 });
 
 // Membuat renderer
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas1 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 renderer.setClearColor(0x000000, 0);
-rendererElement.appendChild(renderer.domElement);
-
 
 
 // Fungsi animate untuk melakukan render dan animasi
@@ -71,7 +65,6 @@ const animate = () => {
 };
 
 animate();
-swiper.appendSlide(slide1);
 
 }
 

@@ -3,15 +3,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 // Three.js
 export function Slide3(swiper){
 
-let slide1 = document.createElement('div');
-slide1.className = 'swiper-slide';
-
 var root;
-
-
-let rendererElement = document.createElement('div');
-rendererElement.id = 'renderer';
-slide1.appendChild(rendererElement);
+let canvas3 = document.getElementById('canvas3');
 
 // Membuat scene, camera, dan pencahayaan
 const scene = new THREE.Scene();
@@ -55,11 +48,10 @@ helmetLoader.load('./3d_model/darth_vader_helmet/scene.gltf', function (glb) {
 
 
 // Membuat renderer
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas3 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 renderer.setClearColor(0x000000, 0);
-rendererElement.appendChild(renderer.domElement);
 
 
 
@@ -75,7 +67,6 @@ const animate = () => {
 };
 
 animate();
-swiper.appendSlide(slide1);
 
 }
 

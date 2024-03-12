@@ -1,8 +1,8 @@
 
 import { Slide1 } from './js/stroomtoper';
-import { Slide2 } from './js/mandalorian'
+import { Slide2 } from './js/mandalorian';
 import { Slide3 } from './js/darth_vader';
-import './style.css'
+import './style.css';
 
 
 
@@ -57,6 +57,6 @@ document.querySelectorAll(".js-fav").forEach(function(item) {
 
 
 
-// Slide1(swiper);
-// Slide2(swiper);
-// Slide3(swiper);
+Slide1(swiper);
+Slide2(swiper);
+Slide3(swiper);
