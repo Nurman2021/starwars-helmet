@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading Screen</title>
+  <style>
+    /* Mengatur latar belakang dan tata letak */
+    body {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Membuat efek glow pada teks */
+    .loading-text {
+      color: white;
+      font-size: 24px;
+      font-family: 'Star Jedi', sans-serif;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    /* Animasi glow */
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+      }
+      to {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 1);
+      }
+    }
+
+    /* Membuat animasi loading */
+    .loading-bar {
+      width: 300px;
+      height: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+
+    .loading-progress {
+      height: 100%;
+      background-color: white;
+      animation: progress 3s linear forwards;
+      position: relative;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+
+    .loading-percent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: red;
+      font-size: 16px;
+      font-family: 'Star Jedi', sans-serif;
+    }
+
+    @keyframes progress {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="https://ik.imagekit.io/nurman/darth-vader-loading.gif?updatedAt=1710287841359" alt="" srcset="">
+  <div class="loading-text">Loading...</div>
+  <div class="loading-bar">
+    <div class="loading-progress"></div>
+    <div class="loading-percent">0%</div>
+  </div>
+
+  <script>
+    // Update loading percentage
+    const progressElement = document.querySelector('.loading-progress');
+    const percentElement = document.querySelector('.loading-percent');
+    let progress = 0;
+    let interval = setInterval(() => {
+      progress++;
+      progressElement.style.width = progress + '%';
+      percentElement.textContent = progress + '%';
+      if (progress === 100) {
+        clearInterval(interval);
+      }
+    }, 30);
+  </script>
+</body>
+</html>

@@ -16,8 +16,6 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.z = 2;
 
-
-
 const light1 = new THREE.DirectionalLight(0xffffff, 5);
 light1.position.set(2, 2, 5);
 light1.castShadow = true;
