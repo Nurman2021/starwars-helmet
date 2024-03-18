@@ -17,7 +17,7 @@
 </head>
 
 <body>
-
+<audio id="myAudio" src="https://ik.imagekit.io/nurman/Star%20Wars%20Theme%20Song%20%20Star%20Wars%20Background%20Music%20%20Star%20Wars%20BGM%20%20Star%20Wars%20Theme%20Music.mp3?updatedAt=1710717981946" autoplay loop></audio>
   <!-- partial:index.partial.html -->
   <div class="wrapper">
 
@@ -28,27 +28,19 @@
 
 
       <div class="product-img">
-
         <div class="product-img__item" id="img1">
-          <canvas id="canvas2" class="product-img__canvas"></canvas>
-        </div>
-
-        <div class="product-img__item" id="img3">
-          <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405217/starwars/item-2.webp"
-            alt="star wars" class="product-img__img">
+            <canvas id="canvas1" class="product-img__canvas"></canvas>
         </div>
 
         <div class="product-img__item" id="img2">
-          <canvas id="canvas3" class="product-img__canvas"></canvas>
+          <canvas id="canvas2" class="product-img__canvas"></canvas>
+        </div>
+        
+        <div class="product-img__item" id="img3">
+          <canvas id="canvas3" class="product-img__canva"></canvas>
         </div>
 
-        <div class="product-img__item" id="img4">
-            <canvas id="canvas1" class="product-img__canvas"></canvas>
-        </div>
       </div>
-
-
-
       <div class="product-slider">
         <button class="prev disabled">
           <span class="icon">
@@ -66,9 +58,9 @@
         </button>
 
         <div class="product-slider__wrp swiper-wrapper">
-          <div class="product-slider__item swiper-slide" data-target="img4">
+          <div class="product-slider__item swiper-slide" data-target="img1" data-legion="galactic">
             <div class="product-slider__card">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405223/starwars/item-4-bg.webp"
+              <img src="https://ik.imagekit.io/nurman/bg1.png?updatedAt=1701779690539"
                 alt="star wars" class="product-slider__cover">
               <div class="product-slider__content">
                 <h1 class="product-slider__title">
@@ -80,22 +72,21 @@
                 <div class="product-ctr">
                   <p class="product-labels__desc">Our Hero Helmet is cast from the original 1976 moulds, the original
                     range is the most accurate replica of the on-screen stormtroopers. The Hero helmet was used by the
-                    leading actors and incorporates a number of distinct facial characteristics.
-
-                    <br><br><br> DETAILS <br><br><br>
+                    leading actors and incorporates a number of distinct facial characteristics.</p>
+                    <span class="product-labels__desc">DETAILS</span>
+                     
                     <ul class="product-labels__list">
                       <li>Genuine Made by the original maker SDS</li>
                       <li>Authentic made in the same studio as the originals</li>
                       <li>Quality Handmade by specialist prop makers just like the originals</li>
                     </ul>
-                  </p>
-                  <br><br>
+                  
                   <div class="product-labels">
                     <div class="product-labels__title">HELMET SIZE</div>
 
                     <div class="product-labels__group">
                       <label class="product-labels__item">
-                        <input type="radio" class="product-labels__checkbox" name="type5">
+                        <input type="radio" class="product-labels__checkbox" name="type5" checked>
                         <span class="product-labels__txt">S</span>
                       </label>
 
@@ -128,66 +119,25 @@
               </div>
             </div>
           </div>
-          <div class="product-slider__item swiper-slide" data-target="img1">
+          <div class="product-slider__item swiper-slide" data-target="img2" data-legion="mandalorian">
             <div class="product-slider__card">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405222/starwars/item-1-bg.webp"
-                alt="star wars" class="product-slider__cover">
-              <div class="product-slider__content">
-                <h1 class="product-slider__title">
-                  DART VADER <br> HELMET
-                </h1>
-                <span class="product-slider__price">&pound; 9.999,<sup>99</sup></span>
-                <div class="product-ctr">
-                  <div class="product-labels">
-                    <div class="product-labels__title">HELMET SIZE</div>
-
-                    <div class="product-labels__group">
-                      <label class="product-labels__item">
-                        <input type="radio" class="product-labels__checkbox" name="type5">
-                        <span class="product-labels__txt">S</span>
-                      </label>
-
-                      <label class="product-labels__item">
-                        <input type="radio" class="product-labels__checkbox" name="type5">
-                        <span class="product-labels__txt">M</span>
-                      </label>
-
-                      <label class="product-labels__item">
-                        <input type="radio" class="product-labels__checkbox" name="type5">
-                        <span class="product-labels__txt">L</span>
-                      </label>
-
-                      <label class="product-labels__item">
-                        <input type="radio" class="product-labels__checkbox" name="type5">
-                        <span class="product-labels__txt">XL</span>
-                      </label>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div class="product-slider__bottom">
-                  <button class="product-slider__cart">
-                    ADD TO CART
-                  </button>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-slider__item swiper-slide" data-target="img2">
-            <div class="product-slider__card">
-              <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405222/starwars/item-2-bg.webp"
+              <img src="https://ik.imagekit.io/nurman/bgB1.png?updatedAt=1701779690594"
                 alt="star wars" class="product-slider__cover">
               <div class="product-slider__content">
                 <h1 class="product-slider__title">
                   THE MANDALORIAN <br> HELMET
                 </h1>
-                <span class="product-slider__price">&pound; 1.699,<sup>99</sup></span>
+                <span class="product-slider__price">&pound; 9.999,<sup>99</sup></span>
                 <div class="product-ctr">
+                  <p class="product-labels__desc">Our Mandalorian Helmet is crafted with precision and attention to detail, making it the most accurate replica of the iconic helmet worn by the legendary bounty hunter. Inspired by "The Mandalorian" series, it captures the essence of the character and incorporates distinctive features.</p>
+                    <span class="product-labels__desc">DETAILS</span>
+                     
+                    <ul class="product-labels__list">
+                      <li>Genuine: Made by SDS, the original maker</li>
+                      <li>Authentic: Produced in the same studio as the originals</li>
+                      <li>Quality Handmade: Crafted by specialist prop makers for an authentic feel</li>
+                    </ul>
+                  
                   <div class="product-labels">
                     <div class="product-labels__title">HELMET SIZE</div>
 
@@ -203,7 +153,7 @@
                       </label>
 
                       <label class="product-labels__item">
-                        <input type="radio" class="product-labels__checkbox" name="type5" checked>
+                        <input type="radio" class="product-labels__checkbox" name="type5">
                         <span class="product-labels__txt">L</span>
                       </label>
 
@@ -215,7 +165,65 @@
                     </div>
 
                   </div>
+                </div>
 
+                <div class="product-slider__bottom">
+                  <button class="product-slider__cart">
+                    ADD TO CART
+                  </button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-slider__item swiper-slide" data-target="img3" data-legion="galactic">
+            <div class="product-slider__card">
+              <img src="https://ik.imagekit.io/nurman/bg1.png?updatedAt=1701779690539"
+                alt="star wars" class="product-slider__cover">
+              <div class="product-slider__content">
+                <h1 class="product-slider__title">
+                  DARTH VADER<br> HELMET
+                </h1>
+                <span class="product-slider__price">&pound; 1.699,<sup>99</sup></span>
+                <div class="product-ctr">
+                  <p class="product-labels__desc">Our Hero Helmet is meticulously crafted using the original 1976 molds, ensuring the utmost accuracy in replicating the iconic Darth Vader helmet seen on-screen. This authentic replica, worn by the leading actors, showcases distinctive facial characteristics that capture the essence of the character.</p>
+
+                    <span class="product-labels__desc">DETAILS</span>
+                     
+                    <ul class="product-labels__list">
+                      <li>Genuine Made by the original maker SDS</li>
+                      <li>Authentic made in the same studio as the originals</li>
+                      <li>Quality Handmade: Expert prop makers meticulously handcraft each helmet, mirroring the craftsmanship of the originals</li>
+                    </ul>
+                  
+                  <div class="product-labels">
+                    <div class="product-labels__title">HELMET SIZE</div>
+
+                    <div class="product-labels__group">
+                      <label class="product-labels__item">
+                        <input type="radio" class="product-labels__checkbox" name="type5">
+                        <span class="product-labels__txt">S</span>
+                      </label>
+
+                      <label class="product-labels__item">
+                        <input type="radio" class="product-labels__checkbox" name="type5">
+                        <span class="product-labels__txt">M</span>
+                      </label>
+
+                      <label class="product-labels__item">
+                        <input type="radio" class="product-labels__checkbox" name="type5">
+                        <span class="product-labels__txt">L</span>
+                      </label>
+
+                      <label class="product-labels__item">
+                        <input type="radio" class="product-labels__checkbox" name="type5">
+                        <span class="product-labels__txt">XL</span>
+                      </label>
+
+                    </div>
+
+                  </div>
                 </div>
 
                 <div class="product-slider__bottom">
@@ -262,13 +270,20 @@
   <!-- Swiper -->
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-
-
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
 
+  <!-- Loading section -->
+  <div id="loading-container">
+    <img src="https://ik.imagekit.io/nurman/darth-vader-loading.gif?updatedAt=1710287841359" alt="" srcset="">
+  <div class="loading-text">Loading...</div>
+  <div class="loading-bar">
+    <div class="loading-progress"></div>
+    <div id="loading-percent">0%</div>
+  </div>
+  </div>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

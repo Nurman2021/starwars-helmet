@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { LoadingManager } from 'three';
 // Three.js
-export function Slide2(swiper){
+export function Slide2(swiper, url, loadingManager){
 
 
 var root;
@@ -32,17 +33,25 @@ pointlight.position.set(5, 5, 5);
 scene.add(pointlight);
 
 // Memuat model helm
-const helmetLoader = new GLTFLoader();
-helmetLoader.load('./3d_model/mandalorian_helmet/scene.gltf', function (glb) {
+const helmetLoader = new GLTFLoader(loadingManager);
+helmetLoader.load(url, function (glb) {
 
   console.log('mandalorian', glb);
   root = glb.scene;
   root.position.set(0, 0, 0);
-  root.scale.set(0.5,0.5,0.5);
+  root.scale.set(0.4,0.4,0.4);
 
 
 
   scene.add(root);
+  window.addEventListener('resize', resize);
+}, function ( progress ) {
+
+  console.log ( ( progress.loaded / progress.total * 100 ) + '%' );
+
+}, function ( error ) {
+
+  console.log ( error );
 });
 
 // Membuat renderer
@@ -50,6 +59,18 @@ const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas2 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 renderer.setClearColor(0x000000, 0);
+
+function resize() {
+
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize( width, height );
+
+}
 
 
 // Fungsi animate untuk melakukan render dan animasi

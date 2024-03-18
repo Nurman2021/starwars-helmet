@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { LoadingManager } from 'three';
 // Three.js
-export function Slide3(swiper){
+export function Slide3(swiper, url, loadingManager){
 
 var root;
 let canvas3 = document.getElementById('canvas3');
@@ -29,19 +30,24 @@ pointlight.position.set(5, 5, 5);
 scene.add(pointlight);
 
 // Memuat model helm
-const helmetLoader = new GLTFLoader();
-helmetLoader.load('./3d_model/darth_vader_helmet/scene.gltf', function (glb) {
+const helmetLoader = new GLTFLoader(loadingManager);
+helmetLoader.load(url, function (glb) {
 
   console.log('darth-vader ', glb);
   root = glb.scene;
   root.position.set(0, -0.2, 0);
-  root.scale.set(0.2,0.2,0.2);
-
-
-
+  root.scale.set(0.15,0.15,0.15);
 
   scene.add(root);
+  window.addEventListener('resize', resize);
   
+}, function ( progress ) {
+
+  console.log ( ( progress.loaded / progress.total * 100 ) + '%' );
+
+}, function ( error ) {
+
+  console.log ( error );
 });
 
 
@@ -51,7 +57,17 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 renderer.setClearColor(0x000000, 0);
 
+function resize() {
 
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize( width, height );
+
+}
 
 // Fungsi animate untuk melakukan render dan animasi
 const animate = () => {
