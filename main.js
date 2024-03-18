@@ -29,7 +29,10 @@ loadingManager.onProgress = function (url, itemsLoaded, itemsTotal){
 
 loadingManager.onLoad = function (){
   loadingScreen.style.display = 'none';
-  window.onload = playAudio;
+  if(loadingScreen.style.display == 'none'){
+    playAudio();
+  }
+
 };
 
 // const path = require('path'); // uki
