@@ -33,15 +33,15 @@ loadingManager.onLoad = function (){
 };
 
 // const path = require('path'); // uki
-const stormtrooper = '/workspaces/starwars-helmet/assets/model/empire_stormtrooper_helmet/scene.gltf';
-const darth_vader = '/workspaces/starwars-helmet/assets/model/darth_vader_helmet/scene.gltf';
+// const stormtrooper = '/workspaces/starwars-helmet/assets/model/empire_stormtrooper_helmet/scene.gltf';
+const stormtrooper = 'empire_stormtrooper_helmet/scene.gltf';
+// const darth_vader = '/workspaces/starwars-helmet/assets/model/darth_vader_helmet/scene.gltf';
+const darth_vader = 'darth_vader_helmet/scene.gltf';
 // const mandalorian = '/workspaces/starwars-helmet/assets/model/mandalorian_helmet/scene.gltf';
 const mandalorian = 'mandalorian_helmet/scene.gltf'; // uki
 
 loadingManager.onError = function (url){
   console.log('gagal memuat', url);
-  const p = process.cwd();
-  console.log(`Currpath: ${p}`);
   // console.log(`path: ${path.resolve()}`); // uki
 };
 // SWIPER JS
