@@ -32,9 +32,9 @@ loadingManager.onLoad = function (){
   window.onload = playAudio;
 };
 
-const stormtrooper = '/assets/model/empire_stormtrooper_helmet/scene.gltf';
-const darth_vader = '/assets/model/darth_vader_helmet/scene.gltf';
-const mandalorian = '/assets/model/mandalorian_helmet/scene.gltf';
+const stormtrooper = '/workspaces/assets/model/empire_stormtrooper_helmet/scene.gltf';
+const darth_vader = '/workspaces/assets/model/darth_vader_helmet/scene.gltf';
+const mandalorian = '/workspaces/assets/model/mandalorian_helmet/scene.gltf';
 
 loadingManager.onError = function (url){
   console.log('gagal memuat', url);
