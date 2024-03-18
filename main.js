@@ -32,14 +32,16 @@ loadingManager.onLoad = function (){
   window.onload = playAudio;
 };
 
-const path = require('path'); // uki
+// const path = require('path'); // uki
 const stormtrooper = '/workspaces/starwars-helmet/assets/model/empire_stormtrooper_helmet/scene.gltf';
 const darth_vader = '/workspaces/starwars-helmet/assets/model/darth_vader_helmet/scene.gltf';
 const mandalorian = '/workspaces/starwars-helmet/assets/model/mandalorian_helmet/scene.gltf';
 
 loadingManager.onError = function (url){
   console.log('gagal memuat', url);
-  console.log(`path: ${path.resolve()}`); // uki
+  const p = process.cwd();
+  console.log(`Currpath: ${p}`);
+  // console.log(`path: ${path.resolve()}`); // uki
 };
 // SWIPER JS
 var swiper = new Swiper('.product-slider', {
